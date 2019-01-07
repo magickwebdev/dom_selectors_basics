@@ -1,66 +1,64 @@
-////////////////////////////
-// Older way of selecting //
-// elements from the DOM ///
-////////////////////////////
+// Older way of selecting elements from the DOM
+// const divOne = document.getElementById('div-one');
 
-const divOne = document.getElementById('div-one');
+// divOne.style.color = 'red';
 
-const allDivs = document.getElementsByClassName('card');
+// const cards = document.getElementsByClassName('card');
 
-const allDivs = document.getElementsByTagName('div');
+// const allDivs = document.getElementsByTagName('div');
+
+// console.log(cards);
+// console.log(allDivs);
 
 ///////////////////////////
 //// querySelector way ////
 ///////////////////////////
 
-////// By id //////
-const divOne = document.querySelector('#div-one');
+////// Selecting Elements By id //////
+// const divOne = document.querySelector('#div-one');
+// const h2InDivTwo = document.querySelector('#div-two h2');
 
-const toggleHide = document.querySelector('#toggle-hide');
+const hideBtn = document.querySelector('#toggle-hide');
+const orangeBtn = document.querySelector('#toggle-orange');
 
-const toggleOrange = document.querySelector('#toggle-orange');
+// hideBtn.addEventListener('click', function() {
+//   divOne.classList.toggle('hide');
+// });
 
-divOne.style.color = 'red';
+// h2InDivTwo.addEventListener('click', function() {
+//   divOne.classList.toggle('orange-text');
+// });
 
-toggleHide.addEventListener('click', function() {
-  divOne.classList.toggle('hide');
-});
+//// Selecting Elements by class names ////
+const divsWithClassCard = document.querySelectorAll('.card');
 
-toggleOrange.addEventListener('click', function() {
-  divOne.classList.toggle('orange-text');
-});
+const h2InCardClass = document.querySelectorAll('.card h2');
+// divsWithClassCard.forEach(function(card) {
+//   card.style.color = 'purple';
+// });
 
-///// by element/tag name /////
-// most likely not going to want to select elements by the element name as it is too general
-
-const allDivs = document.querySelectorAll('div');
-
-console.log(allDivs);
-
-allDivs.forEach(function(div) {
-  div.style.color = 'orange';
-});
-
-////// by class name //////
-const divsWithCardClass = document.querySelectorAll('.card');
-
-////////////////////
-// why you would use id's for selecting these btns and how a
-// class can do this but on separate pages or separate button classname
-////////////////
 const btns = document.querySelectorAll('.btn');
 
-btns.forEach(function(btn) {
-  btn.textContent = 'Button';
-  btn.addEventListener('click', function() {
-    divOne.classList.toggle('hide');
+// btns.forEach(function(btn) {
+//   btn.addEventListener('click', function() {
+//     h2InCardClass.forEach(function(h2) {
+//       h2.style.color = 'red';
+//     });
+//   });
+// });
+
+hideBtn.addEventListener('click', function() {
+  h2InCardClass.forEach(function(h2) {
+    h2.classList.toggle('hide');
   });
 });
 
-console.log(divsWithCardClass);
-
-divsWithCardClass.forEach(function(div) {
-  div.addEventListener('click', function() {
-    this.classList.toggle('orange-text');
+orangeBtn.addEventListener('click', function() {
+  document.querySelectorAll('.card p').forEach(function(paragraph) {
+    paragraph.classList.toggle('orange-text');
   });
 });
+
+// divsWithClassCard.style.color = 'purple';
+
+console.log(h2InCardClass);
