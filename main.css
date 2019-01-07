@@ -1,0 +1,37 @@
+.card {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-align: center;
+  width: 75%;
+  margin: 10px auto;
+}
+
+.btn {
+  padding: 5px 10px;
+  color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+}
+
+button:focus {
+  outline: 0;
+}
+
+#toggle-hide {
+  background: #000000;
+}
+
+#toggle-orange {
+  background: orange;
+}
+
+.orange-text {
+  color: orange;
+}
+
+.hide {
+  display: none;
+  /* visibility: hidden; */
+}
